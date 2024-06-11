@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Login Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- standard MD5 implementation -->
+    <script src="md5.js"></script>
+
+    <script>
+      function verify() {
+        checkpass = document.getElementById("pass").value;
+        split = 4;
+        if (checkpass.substring(0, split) == "TI") {
+          if (checkpass.substring(split * 6, split * 7) == "pr0") {
+            if (checkpass.substring(split, split * 2) == "404{") {
+              if (checkpass.substring(split * 4, split * 5) == "m3_1m") {
+                if (checkpass.substring(split * 3, split * 4) == "its") {
+                  if (checkpass.substring(split * 5, split * 6) == "th3") {
+                    if (checkpass.substring(split * 2, split * 3) == "h1_") {
+                      if (
+                        checkpass.substring(split * 7, split * 8) == "bl3m}"
+                      ) {
+                        alert("Password Verified");
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } else {
+          alert("Incorrect password");
+        }
+      }
+    </script>
+    <div
+      style="
+        position: relative;
+        padding: 5px;
+        top: 50px;
+        left: 38%;
+        width: 350px;
+        height: 140px;
+        background-color: #f8dbd3;
+      "
+    >
+      <div style="text-align: center">
+        <p>This is the secure login portal</p>
+        <p>Enter valid credentials to proceed</p>
+        <form action="index.html" method="post">
+          <input type="password" id="pass" size="8" />
+          <br />
+          <input
+            type="submit"
+            value="verify"
+            onclick="verify(); return false;"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
